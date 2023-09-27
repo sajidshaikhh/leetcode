@@ -20,3 +20,22 @@
                 <span style="color: #f8f8f2">p1</span><span style="color: #f92672">-=</span><span style="color: #ae81ff">1</span>
         <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">[p1</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">p2</span><span style="color: #f92672">+</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span>
 </pre></div>
+<h1>Decode string at Index</h1>
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Solution</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">decodeAtIndex</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">s:</span> <span style="color: #f8f8f2">str,</span> <span style="color: #f8f8f2">k:</span> <span style="color: #f8f8f2">int)</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">str:</span>
+        <span style="color: #f8f8f2">total_length</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">char</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">s:</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">char</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">isdigit():</span>
+                <span style="color: #f8f8f2">total_length</span> <span style="color: #f92672">*=</span> <span style="color: #f8f8f2">int(char)</span>
+            <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">total_length</span> <span style="color: #f92672">+=</span> <span style="color: #ae81ff">1</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">char</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">reversed(s):</span>
+            <span style="color: #f8f8f2">k</span> <span style="color: #f92672">%=</span> <span style="color: #f8f8f2">total_length</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">k</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">and</span> <span style="color: #f8f8f2">char</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">isalpha():</span>
+                <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">char</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">char</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">isdigit():</span>
+                <span style="color: #f8f8f2">total_length</span> <span style="color: #f92672">//=</span> <span style="color: #f8f8f2">int(char)</span>
+            <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">total_length</span> <span style="color: #f92672">-=</span> <span style="color: #ae81ff">1</span>
+</pre></div>
+
