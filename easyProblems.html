@@ -201,6 +201,20 @@
                 <span style="color: #f8f8f2">l</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">1</span>
         <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">nums</span>
 </pre></div>
+<h1>Monotonic Array</h1>
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Solution</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">isMonotonic</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">nums:</span> <span style="color: #f8f8f2">List[int])</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">bool:</span>
+        <span style="color: #f8f8f2">inc,dec</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">True,True</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,len(nums)):</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">nums[i]</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">nums[i</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]:</span>
+                <span style="color: #f8f8f2">dec</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">False</span>
+            <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">nums[i]</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">nums[i</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]:</span>
+                <span style="color: #f8f8f2">inc</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">False</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">inc</span> <span style="color: #f92672">and</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">dec:</span>
+                <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">False</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">True</span>
+</pre></div>
+
 
 
 
