@@ -70,6 +70,26 @@
                     <span style="color: #f8f8f2">y</span><span style="color: #f92672">+=</span><span style="color: #ae81ff">1</span>
         <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">y</span>
 </pre></div>
+<h1>Majority Element II</h1>
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Solution</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">majorityElement</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">nums:</span> <span style="color: #f8f8f2">List[int])</span> <span style="color: #f92672">-&gt;</span> <span style="color: #f8f8f2">List[int]:</span>
+        <span style="color: #f8f8f2">count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">defaultdict(int)</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">nums:</span>
+            <span style="color: #f8f8f2">count[n]</span> <span style="color: #f92672">+=</span> <span style="color: #ae81ff">1</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">len(count)</span> <span style="color: #f92672">&lt;=</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #66d9ef">continue</span>
+            <span style="color: #f8f8f2">newCount</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">defaultdict(int)</span>
+            <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">n,c</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">count</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">items():</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">:</span>
+                    <span style="color: #f8f8f2">newCount[n]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span>
+            <span style="color: #f8f8f2">count</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">newCount</span>
+        <span style="color: #f8f8f2">res</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">count:</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">nums</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">count(n)</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">len(nums)</span><span style="color: #f92672">//</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">:</span>
+                <span style="color: #f8f8f2">res</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(n)</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">res</span>
+</pre></div>
+
 
 
 
